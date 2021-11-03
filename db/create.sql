@@ -22,7 +22,7 @@ CREATE TABLE products (
 --
 
 insert into products (name, description, code, price) values ('Dutch Film', 'nederlandse film', '816905633-0', 10.5);
-insert into products (name, description, code, price) values ('kleding', 'Nulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi.
+insert into products (name, description, code, price) values ('kleding', 'rode kleding
 
 Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque.
 
