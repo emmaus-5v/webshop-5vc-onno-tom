@@ -11,6 +11,21 @@ CREATE TABLE products (
   price NUMERIC(10, 2)
 );
 
+CREATE TABLE broeken (
+  id INTEGER PRIMARY KEY,
+  soort stof TEXT,
+  naam TEXT,
+  prijs NUMERIC(40, 100)
+  gemaakt TEXT
+);
+
+CREATE TABLE t-shirt (
+  id INTEGER PRIMARY KEY,
+  merk TEXT, 
+  prijs NUMERIC(20, 60),
+  gemaakt TEXT 
+);
+
 
 --
 -- populate with data
@@ -42,3 +57,4 @@ insert into products (name, description, code, price) values ('riemen', 'Nam ult
 
 Curabitur at ipsum ac tellus semper interdum. Mauris ullamcorper purus sit amet nulla. Quisque arcu libero, rutrum ac, lobortis vel, dapibus at, diam.', '492662523-7', 14);
 
+insert into broeken (id, soort stof, naam, prijs, gemaakt ) values (1, 'wol', 'wollen broek', 45, 'Taiwan');
