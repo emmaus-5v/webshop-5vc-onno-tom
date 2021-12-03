@@ -21,10 +21,13 @@ CREATE TABLE broeken (
 
 CREATE TABLE t-shirt (
   id INTEGER PRIMARY KEY,
+  soort stof TEXT,
   merk TEXT, 
   prijs NUMERIC(20, 60),
   gemaakt TEXT 
 );
+
+
 
 
 --
