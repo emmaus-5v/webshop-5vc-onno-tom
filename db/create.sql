@@ -61,3 +61,10 @@ insert into products (name, description, code, price) values ('riemen', 'Nam ult
 Curabitur at ipsum ac tellus semper interdum. Mauris ullamcorper purus sit amet nulla. Quisque arcu libero, rutrum ac, lobortis vel, dapibus at, diam.', '492662523-7', 14);
 
 insert into broeken (id, soort stof, naam, prijs, gemaakt ) values (1, 'wol', 'wollen broek', 45, 'Taiwan');
+
+
+
+insert into products (code, name, description, price ) values ( '69', 'anti water', 'maakt je kleren waterafstotend', '7,00');
+insert into products (code, name, description, price ) values ( '70', 'geur', 'laat je kleren lekker ruiken', '4,00');
+insert into products (code, name, description, price ) values ( '71', 'klerenhanger', 'om je kleren op te hangen', '4,00');
+insert into products (code, name, description, price ) values ( '72', 'strijkplaat', 'plak platen om kreukels eruit te krijgen', '10,00');
