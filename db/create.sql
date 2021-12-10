@@ -12,20 +12,41 @@ CREATE TABLE products (
 );
 
 CREATE TABLE broeken (
-  id INTEGER PRIMARY KEY,
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
   soort stof TEXT,
   naam TEXT,
-  prijs NUMERIC(40, 100)
-  gemaakt TEXT
+  prijs NUMERIC(40, 100),
+  gemaakt TEXT,
+  omschrijving TEXT
 );
 
 CREATE TABLE t-shirt (
-  id INTEGER PRIMARY KEY,
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  naam TEXT,
   soort stof TEXT,
   merk TEXT, 
   prijs NUMERIC(20, 60),
-  gemaakt TEXT 
+  gemaakt TEXT,
+  omschrijving TEXT
 );
+
+CREATE TABLE bundle (
+   id INTEGER PRIMARY KEY AUTOINCREMENT,
+   broek TEXT,
+   t-shirt TEXT,
+   hoodie TEXT,
+   prijs NUMERIC(100, 240)
+)
+
+CREATE TABLE hoodies (
+id INTEGER PRIMARY KEY AUTOINCREMENT,
+  naam TEXT,
+  soort stof TEXT,
+  merk TEXT, 
+  prijs NUMERIC(40, 120),
+  gemaakt TEXT,
+  omschrijving TEXT
+)
 
 
 
@@ -60,10 +81,10 @@ insert into products (name, description, code, price) values ('riemen', 'Nam ult
 
 Curabitur at ipsum ac tellus semper interdum. Mauris ullamcorper purus sit amet nulla. Quisque arcu libero, rutrum ac, lobortis vel, dapibus at, diam.', '492662523-7', 14);
 
-insert into broeken (id, soort stof, naam, prijs, gemaakt ) values (1, 'wol', 'wollen broek', 45, 'Taiwan');
-
-
-
+insert into broeken ( soort stof, naam, prijs, gemaakt ) values ('wol', 'wollen broek', 45, 'Taiwan');
+insert into t-shirt () values ()
+insert into bundle  () values ()
+insert into hoodies () values ()
 insert into products (code, name, description, price ) values ( '69', 'anti water', 'maakt je kleren waterafstotend', '7,00');
 insert into products (code, name, description, price ) values ( '70', 'geur', 'laat je kleren lekker ruiken', '4,00');
 insert into products (code, name, description, price ) values ( '71', 'klerenhanger', 'om je kleren op te hangen', '4,00');
