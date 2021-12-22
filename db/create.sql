@@ -9,12 +9,19 @@ CREATE TABLE products (
   name VARCHAR(255),
   description TEXT,
   price NUMERIC(10, 300),
+  genre_id INTEGER,
   broek_id INTEGER,
   shirt_id INTEGER,
   truien_id INTEGER,
   sokken_id INTEGER,
   schoenen_id INTEGER,
   bundle_id INTEGER
+);
+
+DROP TABLE IF EXISTS genre;
+CREATE TABLE genre (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  name VARCHAR(25),
 );
 
 DROP TABLE IF EXISTS broek;
@@ -25,6 +32,7 @@ CREATE TABLE broek (
   gemaakt TEXT,
   merk TEXT,
   maat NUMERIC(12, 30)
+  
 );
 
 DROP TABLE IF EXISTS shirt;
