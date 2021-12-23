@@ -147,11 +147,11 @@ insert into products ( code, name, description, price, sokken_id) values ('67857
 insert into products ( code, name, description, price, sokken_id) values ('6785753-4','normale sokken' , 'goed voor allen gelegenheden', 18, 4);
 insert into products ( code, name, description, price, sokken_id) values ('6785753-5','normale sokken' , 'goed voor allen gelegenheden', 12, 5);
 
-insert into products (  name, description, price, bundle_id) values ('bundle1' , 'goed voor alle gelegenheden', 18, 1);
-insert into products (  name, description, price, bundle_id) values ('bundle2' , 'goed voor allen gelegenheden', 18, 2);
-insert into products (  name, description, price, bundle_id) values ('bundle3' , 'goed voor allen gelegenheden', 18, 3);
-insert into products (  name, description, price, bundle_id) values ('bundle4' , 'goed voor allen gelegenheden', 18, 4);
-insert into products (  name, description, price, bundle_id) values ('bundle5' , 'goed voor allen gelegenheden', 18, 5);
+insert into products (  name, description, price, bundle_id) values ('bundle1' , 'goed voor alle gelegenheden', 160, 1);
+insert into products (  name, description, price, bundle_id) values ('bundle2' , 'goed voor allen gelegenheden', 120, 2);
+insert into products (  name, description, price, bundle_id) values ('bundle3' , 'goed voor allen gelegenheden', 180, 3);
+insert into products (  name, description, price, bundle_id) values ('bundle4' , 'goed voor allen gelegenheden', 240, 4);
+insert into products (  name, description, price, bundle_id) values ('bundle5' , 'goed voor allen gelegenheden', 300, 5);
 
 
 

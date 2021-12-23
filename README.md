@@ -199,3 +199,4 @@ for help almost 24x7 with many questions and problems and providing basic shop c
 
 
 
+SELECT products.id AS id, products.code AS code, products.name AS name, products.description AS description, products.price AS prijs,  broek.stof As broek_stof, broek.merk AS broek_merk, broek.gemaakt AS broek_gemaakt, broek.maat AS broek_maat,  shirt.stof AS shirt_stof, shirt.merk AS shirt_merk, shirt.gemaakt AS shirt_gemaakt, shirt.maat AS shirt_maat,  truien.stof AS truien_stof, truien.merk AS truien_merk, truien.gemaakt AS truien_gemaakt, truien.maat AS truien_maat,  sokken.stof As sokken_stof, sokken.merk AS sokken_merk, sokken.gemaakt AS sokken_gemaakt, sokken.maat AS sokken_maat FROM products JOIN broek ON products.broek_id = broek.id JOIN shirt ON products.shirt_id = shirt.id JOIN truien ON products.truien_id = truien.id JOIN sokken ON products.sokken_id = sokken.id ORDER BY id ASC;
