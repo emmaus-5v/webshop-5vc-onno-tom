@@ -198,5 +198,8 @@ for help almost 24x7 with many questions and problems and providing basic shop c
 
 
 
+//
+SELECT * FROM products As p JOIN broek AS b ON p.broek_id = b.id UNION ALL SELECT * FROM products AS p JOIN shirt AS s ON p.shirt_id = s.id UNION ALL SELECT * FROM products AS p JOIN truien AS t ON p.truien_id = t.id UNION ALL SELECT * FROM products AS p JOIN sokken AS so ON p.sokken_id = so.id ORDER BY id ASC
 
-SELECT p.id AS id, p.code AS code, p.name AS name, p.description AS description, p.price AS prijs,  b.stof As broek_stof, b.merk AS broek_merk, b.gemaakt AS broek_gemaakt, b.maat AS broek_maat,  sh.stof AS shirt_stof, sh.merk AS shirt_merk, sh.gemaakt AS shirt_gemaakt, sh.maat AS shirt_maat,  t.stof AS truien_stof, t.merk AS truien_merk, t.gemaakt AS truien_gemaakt, t.maat AS truien_maat,  so.stof As sokken_stof, so.merk AS sokken_merk, so.gemaakt AS sokken_gemaakt, so.maat AS sokken_maat, bu.id AS bundle_id FROM products As p JOIN broek AS b ON p.broek_id = b.id UNION ALL SELECT * FROM products AS p JOIN shirt AS sh ON p.shirt_id = sh.id UNION ALL SELECT * FROM products AS p JOIN truien AS t ON p.truien_id = t.id UNION ALL SELECT * FROM products AS p JOIN sokken AS so ON p.sokken_id = so.id UNION ALL SELECT * FROM products AS p JOIN bundle AS bu ON p.bundle_id = bu.id ORDER by id ASC;
+// 
+SELECT * FROM products As p JOIN broek AS b ON p.broek_id = b.id UNION ALL SELECT * FROM products AS p JOIN shirt AS s ON p.shirt_id = s.id UNION ALL SELECT * FROM products AS p JOIN truien AS t ON p.truien_id = t.id UNION ALL SELECT * FROM products AS p JOIN sokken AS so ON p.sokken_id = so.id ORDER BY id ASC
