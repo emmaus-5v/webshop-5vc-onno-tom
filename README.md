@@ -22,9 +22,9 @@ Stap 1: Start
 - [x] Pas de query aan zodat getoonde producten gesorteerd worden op naam (zie mapje api)
 
 Stap 2: Database opzetten 
-- [ ] Maak tabellen en velden (CREATE TABLE commando) in je database waarin alle informatie kan worden opgeslagen die je over je producten wilt tonen.<br>
+- [x] Maak tabellen en velden (CREATE TABLE commando) in je database waarin alle informatie kan worden opgeslagen die je over je producten wilt tonen.<br>
 Tip: je kunt een multipliciteitendiagram gebruiken als tussenstap voor je database-ontwerp
-- [ ] Vul de tabellen met informatie (INSERT commando)
+- [x] Vul de tabellen met informatie (INSERT commando)
 - [ ] Voeg eventueel plaatjes toe (web/images map)
 
 Stap 3: API aanpassen 
@@ -199,4 +199,4 @@ for help almost 24x7 with many questions and problems and providing basic shop c
 
 
 
-SELECT products.id AS id, products.code AS code, products.name AS name, products.description AS description, products.price AS prijs,  broek.stof As broek_stof, broek.merk AS broek_merk, broek.gemaakt AS broek_gemaakt, broek.maat AS broek_maat,  shirt.stof AS shirt_stof, shirt.merk AS shirt_merk, shirt.gemaakt AS shirt_gemaakt, shirt.maat AS shirt_maat,  truien.stof AS truien_stof, truien.merk AS truien_merk, truien.gemaakt AS truien_gemaakt, truien.maat AS truien_maat,  sokken.stof As sokken_stof, sokken.merk AS sokken_merk, sokken.gemaakt AS sokken_gemaakt, sokken.maat AS sokken_maat FROM products JOIN broek ON products.broek_id = broek.id JOIN shirt ON products.shirt_id = shirt.id JOIN truien ON products.truien_id = truien.id JOIN sokken ON products.sokken_id = sokken.id ORDER BY id ASC;
+SELECT p.id AS id, p.code AS code, p.name AS name, p.description AS description, p.price AS prijs,  b.stof As broek_stof, b.merk AS broek_merk, b.gemaakt AS broek_gemaakt, b.maat AS broek_maat,  sh.stof AS shirt_stof, sh.merk AS shirt_merk, sh.gemaakt AS shirt_gemaakt, sh.maat AS shirt_maat,  t.stof AS truien_stof, t.merk AS truien_merk, t.gemaakt AS truien_gemaakt, t.maat AS truien_maat,  so.stof As sokken_stof, so.merk AS sokken_merk, so.gemaakt AS sokken_gemaakt, so.maat AS sokken_maat, bu.id AS bundle_id FROM products As p JOIN broek AS b ON p.broek_id = b.id UNION ALL SELECT * FROM products AS p JOIN shirt AS sh ON p.shirt_id = sh.id UNION ALL SELECT * FROM products AS p JOIN truien AS t ON p.truien_id = t.id UNION ALL SELECT * FROM products AS p JOIN sokken AS so ON p.sokken_id = so.id UNION ALL SELECT * FROM products AS p JOIN bundle AS bu ON p.bundle_id = bu.id ORDER by id ASC;
