@@ -70,10 +70,10 @@ function getProducts(request, response) {
   const category_id = parseInt(request.query.category)
   let data = []
   if (category_id > 0) {
-    const sqlOpdracht = db.prepare('SELECT * FROM products As p JOIN broek AS b ON p.broek_id = b.id UNION ALL SELECT * FROM products AS p JOIN shirt AS s ON p.shirt_id = s.id UNION ALL SELECT * FROM products AS p JOIN truien AS t ON p.truien_id = t.id UNION ALL SELECT * FROM products AS p JOIN sokken AS so ON p.sokken_id = so.id WHERE category_id = ? ORDER BY id ASC')
+    const sqlOpdracht = db.prepare('SELECT * FROM products AS p JOIN bundle AS bu ON p.bundle_id = bu.id  UNION ALL SELECT * FROM products AS p JOIN broek AS br ON p.broek_id = br.id UNION ALL SELECT * FROM products AS p JOIN shirt AS sh ON p.shirt_id = sh.id WHERE category_id = ? ORDER BY id ASC')
     data = sqlOpdracht.all(category_id)
   } else { 
-    const sqlOpdracht = db.prepare('SELECT * FROM products As p JOIN broek AS b ON p.broek_id = b.id UNION ALL SELECT * FROM products AS p JOIN shirt AS s ON p.shirt_id = s.id UNION ALL SELECT * FROM products AS p JOIN truien AS t ON p.truien_id = t.id UNION ALL SELECT * FROM products AS p JOIN sokken AS so ON p.sokken_id = so.id ORDER BY id ASC')
+    const sqlOpdracht = db.prepare('SELECT * FROM products AS p JOIN bundle AS bu ON p.bundle_id = bu.id UNION ALL SELECT * FROM products AS p JOIN broek AS br ON p.broek_id = br.id UNION ALL SELECT * FROM products AS p JOIN shirt AS sh ON p.shirt_id = sh.id ORDER BY id ASC')
     data = sqlOpdracht.all()
   }
   // console.log(JSON.stringify(data, null, 2))
