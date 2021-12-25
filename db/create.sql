@@ -13,7 +13,8 @@ CREATE TABLE products (
   shirt_id INTEGER,
   truien_id INTEGER,
   sokken_id INTEGER,
-  bundle_id INTEGER
+  bundle_id INTEGER,
+  schoen_id INTEGER
 );
 
 
@@ -40,10 +41,11 @@ CREATE TABLE shirt (
 DROP TABLE IF EXISTS bundle;
 CREATE TABLE bundle (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
-  broek_id INTEGER,
-  shirt_id INTEGER,
-  truien_id INTEGER,
-  sokken_id INTEGER
+  br_id INTEGER,
+  sh_id INTEGER,
+  tr_id INTEGER,
+  so_id INTEGER,
+  sc_id INTEGER
 );
 
 DROP TABLE IF EXISTS truien;
@@ -66,6 +68,15 @@ CREATE TABLE sokken(
   maat NUMERIC(12,30)
 );
 
+DROP TABLE IF EXISTS schoen;
+CREATE TABLE schoen(
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  code VARCHAR (15),
+  stof TEXT,
+  merk TEXT, 
+  gemaakt TEXT,
+  maat NUMERIC(12,30)
+);
 
 
 insert into products (name, description, code, price) values ( 'sport shirt', 'lekker om in te sporten ', '816905633-0', 40);
@@ -97,11 +108,11 @@ insert into shirt (code, stof, gemaakt, merk, maat) values ('6781538-3','katoenm
 insert into shirt (code, stof, gemaakt, merk, maat) values ('6781538-4','katoenmix', 'China', 'ellese', 16);
 insert into shirt (code, stof, gemaakt, merk, maat) values ('6781538-5','katoenmix', 'China', 'ellese', 16);
 
-insert into bundle  (broek_id, shirt_id, truien_id, sokken_id) values (4, 1, 5, 2);
-insert into bundle  (broek_id, shirt_id, truien_id, sokken_id) values (3, 4, 2, 1);
-insert into bundle  (broek_id, shirt_id, truien_id, sokken_id) values (1, 1, 3, 2 );
-insert into bundle  (broek_id, shirt_id, truien_id, sokken_id) values (2, 4, 5, 5);
-insert into bundle  (broek_id, shirt_id, truien_id, sokken_id) values (5, 3, 1, 4 );
+insert into bundle  (br_id, sh_id, tr_id, so_id, sc_id) values (4, 1, 5, 2, 3);
+insert into bundle  (br_id, sh_id, tr_id, so_id, sc_id) values (3, 4, 2, 1, 5);
+insert into bundle  (br_id, sh_id, tr_id, so_id, sc_id) values (1, 1, 3, 2, 5);
+insert into bundle  (br_id, sh_id, tr_id, so_id, sc_id) values (2, 4, 5, 5, 3);
+insert into bundle  (br_id, sh_id, tr_id, so_id, sc_id) values (5, 3, 1, 4, 1);
 
 
 insert into truien (code, stof, gemaakt, merk, maat) values ('6796478-5','katoenmix', 'China', 'HUF', 16);
@@ -116,6 +127,11 @@ insert into sokken (code, stof, gemaakt, merk, maat) values ('6785753-3', 'katoe
 insert into sokken (code, stof, gemaakt, merk, maat) values ('6785753-4', 'katoenmix', 'China', 'addidas', 16);
 insert into sokken (code, stof, gemaakt, merk, maat) values ('6785753-5', 'katoenmix', 'China', 'addidas', 16);
 
+insert into sokken (code, stof, gemaakt, merk, maat) values ('85753-1', 'leer', 'China', 'addidas', 16);
+insert into sokken (code, stof, gemaakt, merk, maat) values ('85753-2', 'leer', 'China', 'addidas', 16);
+insert into sokken (code, stof, gemaakt, merk, maat) values ('85753-3', 'leer', 'China', 'addidas', 16);
+insert into sokken (code, stof, gemaakt, merk, maat) values ('85753-4', 'leer', 'China', 'addidas', 16);
+insert into sokken (code, stof, gemaakt, merk, maat) values ('85753-5', 'leer', 'China', 'addidas', 16);
 
 insert into products (code, name, description, price, shirt_id) values ('6781538-1', 'sport shirt', 'lekker om in te sporten ', 40, 1);
 insert into products (code, name, description, price, shirt_id) values ('6781538-2', 'ondershirt', 'goed voor onder je shirt', 20, 2 );
@@ -147,5 +163,9 @@ insert into products (  name, description, price, bundle_id) values ('bundle3' ,
 insert into products (  name, description, price, bundle_id) values ('bundle4' , 'goed voor allen gelegenheden', 240, 4);
 insert into products (  name, description, price, bundle_id) values ('bundle5' , 'goed voor allen gelegenheden', 300, 5);
 
-
+insert into products ( code, name, description, price, schoen_id) values ('85753-1','normale schoenen' , 'goed voor allen gelegenheden', 140, 1);
+insert into products ( code, name, description, price, schoen_id) values ('85753-2','normale schoenen' , 'goed voor allen gelegenheden', 80, 2);
+insert into products ( code, name, description, price, schoen_id) values ('85753-3','normale schoenen' , 'goed voor allen gelegenheden', 120, 3);
+insert into products ( code, name, description, price, schoen_id) values ('85753-4','normale schoenen' , 'goed voor allen gelegenheden', 60, 4);
+insert into products ( code, name, description, price, schoen_id) values ('85753-5','normale schoenen' , 'goed voor allen gelegenheden', 100, 5);
 
