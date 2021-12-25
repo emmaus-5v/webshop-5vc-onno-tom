@@ -79,11 +79,11 @@ CREATE TABLE schoen(
 );
 
 
-insert into products (name, description, code, price) values ('French Film', 'Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id.', '816905633-0', 10.5);
-insert into products (name, description, code, price) values ('Post Mortem', 'Nulla ut erat id mauris vulputate elementum. Nullam varius.', '077030122-3', 11);
-insert into products (name, description, code, price) values ('Scarlet and the Black, The', 'Pellentesque at nulla. Suspendisse potenti.', '445924201-X', 13.5);
-insert into products (name, description, code, price) values ('Aquí llega Condemor, el pecador de la pradera', 'Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa.', '693155505-7', 13.5);
-insert into products (name, description, code, price) values ('Kiss for Corliss, A (Almost a Bride)', 'Nulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi.', '686928463-6', 14);
+insert into products (name, description, code, price) values ( 'sport shirt', 'lekker om in te sporten ', '816905633-0', 40);
+insert into products (name, description, code, price) values ('ondershirt', 'goed voor onder je shirt', '077030122-3', 20);
+insert into products (name, description, code, price) values ('normaal shirt' , 'goed voor allen gelegenheden', '445924201-X', 50);
+insert into products (name, description, code, price) values ('chique shirt', 'voor een avondje weg', '693155505-7', 60);
+insert into products (name, description, code, price) values ('normaal shirt' , 'goed voor allen gelegenheden', '686928463-6', 30);
 insert into products (name, description, code, price) values ('Velvet Goldmine', 'Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla.', '492662523-7', 14);
 
 
@@ -113,6 +113,7 @@ insert into bundle  (br_id, sh_id, tr_id, so_id, sc_id) values (3, 4, 2, 1, 5);
 insert into bundle  (br_id, sh_id, tr_id, so_id, sc_id) values (1, 1, 3, 2, 5);
 insert into bundle  (br_id, sh_id, tr_id, so_id, sc_id) values (2, 4, 5, 5, 3);
 insert into bundle  (br_id, sh_id, tr_id, so_id, sc_id) values (5, 3, 1, 4, 1);
+
 
 insert into truien (code, stof, gemaakt, merk, maat) values ('6796478-5','katoenmix', 'China', 'HUF', 16);
 insert into truien (code, stof, gemaakt, merk, maat) values ('6796478-6','katoenmix', 'China', 'HUF', 16);
