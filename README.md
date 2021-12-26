@@ -199,7 +199,14 @@ for help almost 24x7 with many questions and problems and providing basic shop c
 
 
 //
-SELECT * FROM products As p JOIN broek AS b ON p.broek_id = b.id UNION ALL SELECT * FROM products AS p JOIN shirt AS s ON p.shirt_id = s.id UNION ALL SELECT * FROM products AS p JOIN truien AS t ON p.truien_id = t.id UNION ALL SELECT * FROM products AS p JOIN sokken AS so ON p.sokken_id = so.id ORDER BY id ASC
+SELECT p.name, p.description, p.code AS product_code, p.price, br.code AS broek_code, br.stof as broek_stof, br.gemaakt AS broek_gemaakt, br.merk AS broek_merk, br.maat AS broek_maat 
 
 // 
 SELECT * FROM products As p JOIN broek AS b ON p.broek_id = b.id UNION ALL SELECT * FROM products AS p JOIN shirt AS s ON p.shirt_id = s.id UNION ALL SELECT * FROM products AS p JOIN truien AS t ON p.truien_id = t.id UNION ALL SELECT * FROM products AS p JOIN sokken AS so ON p.sokken_id = so.id ORDER BY id ASC
+
+SELECT p.name, p.description, p.code AS product_code, p.price, bu.id as bu_id, bu.br_id, bu.sh_id, bu.tr_id, bu.so_id, bu.sc_id FROM products AS p JOIN bundle AS bu ON p.bundle_id = bu.id 
+UNION ALL SELECT p.name, p.description, p.code AS product_code, p.price, br.code AS broek_code, br.stof as broek_stof, br.gemaakt AS broek_gemaakt, br.merk AS broek_merk, br.maat AS broek_maat  FROM products AS p JOIN broek AS br ON p.broek_id = br.id 
+UNION ALL SELECT p.name, p.description, p.code AS product_code, p.price, sh.code AS shirt_code, sh.stof as shirt_stof, sh.gemaakt AS shirt_gemaakt, sh.merk AS shirt_merk, sh.maat AS shirt_maat  FROM products AS p JOIN shirt AS sh ON p.shirt_id = sh.id 
+UNION ALL SELECT p.name, p.description, p.code AS product_code, p.price, tr.code AS truien_code, tr.stof as truien_stof, tr.gemaakt AS truien_gemaakt, tr.merk AS truien_merk, tr.maat AS truien_maat FROM products AS p JOIN truien AS tr ON p.truien_id = tr.id 
+UNION ALL SELECT p.name, p.description, p.code AS product_code, p.price, so.code AS sokken_code, so.stof as sokken_stof, so.gemaakt AS sokken_gemaakt, so.merk AS sokken_merk, so.maat AS sokken_maat FROM products AS p JOIN sokken AS so ON p.sokken_id = so.id 
+UNION ALL SELECT p.name, p.description, p.code AS product_code, p.price, sc.code AS schoen_code, sc.stof as schoen_stof, sc.gemaakt AS schoen_gemaakt, sc.merk AS schoen_merk, sc.maat AS schoen_maat FROM products AS p JOIN schoen AS sc ON p.schoen_id = sc.id ORDER BY id ASC

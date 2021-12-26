@@ -70,10 +70,10 @@ function getProducts(request, response) {
   const category_id = parseInt(request.query.category)
   let data = []
   if (category_id > 0) {
-    const sqlOpdracht = db.prepare('SELECT * FROM products AS p JOIN bundle AS bu ON p.bundle_id = bu.id  UNION ALL SELECT * FROM products AS p JOIN broek AS br ON p.broek_id = br.id UNION ALL SELECT * FROM products AS p JOIN shirt AS sh ON p.shirt_id = sh.id WHERE category_id = ? ORDER BY id ASC')
+    const sqlOpdracht = db.prepare('SELECT p.id, p.name, p.description, p.code AS code, p.price, bu.code AS product_code, bu.stof AS stof, bu.gemaakt AS gemaakt, bu.merk AS merk, bu.maat AS maat FROM products AS p JOIN bundle AS bu ON p.bundle_id = bu.id UNION ALL SELECT p.id, p.name, p.description, p.code AS code, p.price, br.code AS product_code, br.stof as stof, br.gemaakt AS gemaakt, br.merk AS merk, br.maat maat  FROM products AS p JOIN broek AS br ON p.broek_id = br.id UNION ALL SELECT p.id, p.name, p.description, p.code AS code, p.price, sh.code AS product_code, sh.stof as stof, sh.gemaakt AS gemaakt, sh.merk AS merk, sh.maat AS maat  FROM products AS p JOIN shirt AS sh ON p.shirt_id = sh.id UNION ALL SELECT p.id, p.name, p.description, p.code AS code, p.price, tr.code AS product_code, tr.stof as stof, tr.gemaakt AS gemaakt, tr.merk AS merk, tr.maat AS truien FROM products AS p JOIN truien AS tr ON p.truien_id = tr.id UNION ALL SELECT p.id, p.name, p.description, p.code AS code, p.price, so.code AS product_code, so.stof as stof, so.gemaakt AS gemaakt, so.merk AS merk, so.maat AS maat FROM products AS p JOIN sokken AS so ON p.sokken_id = so.id UNION ALL SELECT p.id, p.name, p.description, p.code AS code, p.price, sc.code AS product_code, sc.stof as stof, sc.gemaakt AS gemaakt, sc.merk AS merk, sc.maat AS maat FROM products AS p JOIN schoen AS sc ON p.schoen_id = sc.id WHERE category_id = ? ORDER BY p.id ASC')
     data = sqlOpdracht.all(category_id)
   } else { 
-    const sqlOpdracht = db.prepare('SELECT * FROM products AS p JOIN bundle AS bu ON p.bundle_id = bu.id UNION ALL SELECT * FROM products AS p JOIN broek AS br ON p.broek_id = br.id UNION ALL SELECT * FROM products AS p JOIN shirt AS sh ON p.shirt_id = sh.id ORDER BY id ASC')
+    const sqlOpdracht = db.prepare('SELECT p.id , p.name, p.description, p.code AS code, p.price, bu.code AS product_code, bu.stof AS stof, bu.gemaakt AS gemaakt, bu.merk AS merk, bu.maat AS maat FROM products AS p JOIN bundle AS bu ON p.bundle_id = bu.id UNION ALL SELECT p.id, p.name, p.description, p.code AS code, p.price, br.code AS product_code, br.stof as stof, br.gemaakt AS gemaakt, br.merk AS merk, br.maat maat  FROM products AS p JOIN broek AS br ON p.broek_id = br.id UNION ALL SELECT p.id, p.name, p.description, p.code AS code, p.price, sh.code AS product_code, sh.stof as stof, sh.gemaakt AS gemaakt, sh.merk AS merk, sh.maat AS maat  FROM products AS p JOIN shirt AS sh ON p.shirt_id = sh.id UNION ALL SELECT p.id, p.name, p.description, p.code AS code, p.price, tr.code AS product_code, tr.stof as stof, tr.gemaakt AS gemaakt, tr.merk AS merk, tr.maat AS truien FROM products AS p JOIN truien AS tr ON p.truien_id = tr.id UNION ALL SELECT p.id, p.name, p.description, p.code AS code, p.price, so.code AS product_code, so.stof as stof, so.gemaakt AS gemaakt, so.merk AS merk, so.maat AS maat FROM products AS p JOIN sokken AS so ON p.sokken_id = so.id UNION ALL SELECT p.id, p.name, p.description, p.code AS code, p.price, sc.code AS product_code, sc.stof as stof, sc.gemaakt AS gemaakt, sc.merk AS merk, sc.maat AS maat FROM products AS p JOIN schoen AS sc ON p.schoen_id = sc.id ORDER BY p.id ASC')
     data = sqlOpdracht.all()
   }
   // console.log(JSON.stringify(data, null, 2))
@@ -83,7 +83,6 @@ function getProducts(request, response) {
 
 function getProductById(request, response) {
   console.log('API ontvangt /api/products/:id/?', request.query)
-
   let data = []
   const product_id = parseInt(request.params.id)
   const sqlOpdracht = db.prepare('SELECT * FROM products WHERE id = ?')
@@ -92,34 +91,6 @@ function getProductById(request, response) {
 }
 
 /*
-const getRelatedProductsById = (request, response) => {
-  const id = parseInt(request.params.id)
-  // TODO: change query to return related products
-  // it now return an array with the current products
-  pool.query('SELECT * FROM products WHERE id = $1', [id], (error, results) => {
-    if (error) {
-      console.log(error)
-      response.status(500).json("oops")
-    } else {
-      response.status(200).json(results.rows)
-    }
-  })
-}
-
-const createProduct = (request, response) => {
-  const { name, email } = request.body
-
-  pool.query('INSERT INTO products (name, email) VALUES ($1, $2)', [name, email], (error, _results) => {
-    if (error) {
-      console.log(error)
-      response.status(500).json("oops")
-    } else {
-      response.status(201).json(`Product added with ID: ${result.insertId}`)
-    }
-  })
-}
-
-const updateProduct = (request, response) => {
   const id = parseInt(request.params.id)
   const { name, email } = request.body
 
