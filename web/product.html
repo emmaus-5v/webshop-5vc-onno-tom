@@ -91,6 +91,12 @@
                 clone.querySelector(".product_description").textContent = product.description
                 clone.querySelector(".product_price").textContent = `€ ${product.price.toFixed(2)}`
                 clone.querySelector(".product_code").textContent = product.code
+                /*
+                clone.querySelector(".product_stof").textContent = stof
+                clone.querySelector(".product_merk").textContent = merk
+                clone.querySelector(".product_gemaakt").textContent = gemaakt
+                clone.querySelector(".product_maat").textContent = maat
+                */
                 clone.querySelector(".product_id").value = product.id
                 clone.querySelector(".product_id").dataset.json = JSON.stringify(product)
                 clone.querySelector(".product_image").src =`/images/${product.id}.jpg`
