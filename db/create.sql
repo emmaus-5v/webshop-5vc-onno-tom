@@ -139,7 +139,7 @@ insert into products (code, name, description, price, shirt_id) values ('6781538
 insert into products (code, name, description, price, shirt_id) values ('6781538-4', 'chique shirt', 'voor een avondje weg', 60, 4);
 insert into products (code, name, description, price, shirt_id) values ('6781538-5', 'normaal shirt' , 'goed voor allen gelegenheden', 30, 5 );
 
-insert into products (code, name, description, price, broek_id) values ('6756478-8', 'sport broek', 'lekker om in te sporten ', 60, 1);
+insert into products (code, name, description, price, broek_id) values ('6756478-8', 'sport broek', 'lekker om in te sporten ', 60, 6);
 insert into products (code, name, description, price, broek_id) values ('6756478-9','normale broek' , 'goed voor allen gelegenheden', 40, 2);
 insert into products (code, name, description, price, broek_id) values ('6756478-4', 'strakke broek', 'goed voor wat slankeren mannen', 50, 3);
 insert into products (code, name, description, price, broek_id) values ('6756478-1', 'wijde broek', 'goed voor iedereen', 70, 4);
