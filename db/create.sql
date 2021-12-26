@@ -20,7 +20,7 @@ CREATE TABLE products (
 
 DROP TABLE IF EXISTS broek;
 CREATE TABLE broek (
-  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  id INTEGER PRIMARY KEY ,
   code VARCHAR(15),
   stof TEXT,
   gemaakt TEXT,
@@ -96,11 +96,11 @@ insert into products (name, description, code, price) values ('Velvet Goldmine',
 -- want different data? check: https://www.mockaroo.com/910b6c20
 --
 
-insert into broek (code, stof, gemaakt, merk, maat) values ('6756478-8','katoenmix', 'China', 'chasin', 16);
-insert into broek (code, stof, gemaakt, merk, maat) values ('6756478-9','katoenmix', 'China', 'chasin', 16);
-insert into broek (code, stof, gemaakt, merk, maat) values ('6756478-4','katoenmix', 'China', 'chasin', 16);
-insert into broek (code, stof, gemaakt, merk, maat) values ('6756478-1','katoenmix', 'China', 'chasin', 16);
-insert into broek (code, stof, gemaakt, merk, maat) values ('6756478-6','katoenmix', 'China', 'chasin', 16);
+insert into broek (id, code, stof, gemaakt, merk, maat) values (6, '6756478-8','katoenmix', 'China', 'chasin', 16);
+insert into broek (id, code, stof, gemaakt, merk, maat) values (7, '6756478-9','katoenmix', 'China', 'chasin', 16);
+insert into broek (id, code, stof, gemaakt, merk, maat) values (8, '6756478-4','katoenmix', 'China', 'chasin', 16);
+insert into broek (id, code, stof, gemaakt, merk, maat) values (9, '6756478-1','katoenmix', 'China', 'chasin', 16);
+insert into broek (id,code, stof, gemaakt, merk, maat) values (10, '6756478-6','katoenmix', 'China', 'chasin', 16);
 
 insert into shirt (code, stof, gemaakt, merk, maat) values ('6781538-1','katoenmix', 'China', 'ellese', 16);
 insert into shirt (code, stof, gemaakt, merk, maat) values ('6781538-2','katoenmix', 'China', 'ellese', 16);
